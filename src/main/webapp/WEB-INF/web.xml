@@ -1,36 +1,73 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
 
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:/applicationContext.xml</param-value>
-    <!-- 默认是/WEB-INF/applicationContext.xml -->
-  </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/applicationContext.xml</param-value>
+        <!-- 默认是/WEB-INF/applicationContext.xml -->
+    </context-param>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
 
-  <listener>
-    <listener-class>
-      org.springframework.web.context.ContextLoaderListener
-    </listener-class>
-  </listener>
 
-  <servlet>
-    <servlet-name>SpringMVC</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:/SpringMVC-servlet.xml</param-value>
-      <!-- 默认是/WEB-INF/[servlet名字]-servlet.xml -->
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
 
-  <servlet-mapping>
-    <servlet-name>SpringMVC</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+
+
+
+
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:/SpringMVC-servlet.xml</param-value>
+            <!-- 默认是/WEB-INF/[servlet名字]-servlet.xml -->
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+    <context-param>
+        <param-name>isLog4jAutoInitializationDisabled</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <!-- 默认就会找这个文件，不需要额外配置引用
+    <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>classpath:/log4j2.xml</param-value>
+    </context-param>
+   -->
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>log4jServletFilter</filter-name>
+        <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>log4jServletFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+
+
+
 </web-app>
