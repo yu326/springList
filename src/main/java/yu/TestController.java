@@ -3,6 +3,8 @@ package yu;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,8 +21,12 @@ public class TestController {
     @RequestMapping("index")
 //    @ResponseBody
     public  String index(){
+
+        Resource resource = new ClassPathResource("appconfig.properties");
+
+
         //输出日志文件
-//        logger.info("the first jsp pages");
+        logger.info("the first jsp pages");
         logger.debug("the debug message");
         logger.error("the error message");
         //返回一个index.jsp这个视图
