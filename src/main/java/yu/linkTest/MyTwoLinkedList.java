@@ -1,33 +1,33 @@
-package yu;
+package yu.linkTest;
 
-//自定义双向链表
-//实现Iterable接口，可迭代
-//
-public class MyLinkedList<AnyType> implements Iterable<AnyType> {
-    //声明为static,嵌套类，类的一部分，并且独立于外围类对象存在
+/**
+ * Created by koreyoshi on 2017/7/28.
+ */
+public class MyTwoLinkedList<AnyType> implements Iterable<AnyType> {
+    private int theSize;
+    private int modCount = 0;
+    private Node<AnyType> beginMarker;
+    private Node<AnyType> endMarker;
+
     private static class Node<AnyType> {
-        //初始化：值，前驱和后继节点
+        public AnyType data;
+        public Node<AnyType> prev;
+        public Node<AnyType> next;
+
         public Node(AnyType d, Node<AnyType> p, Node<AnyType> n) {
             data = d;
             prev = p;
             next = n;
         }
-
-        //外围均可访问
-        public AnyType data;
-        public Node<AnyType> prev;
-        public Node<AnyType> next;
-
     }
 
-    public MyLinkedList() {
+    public MyTwoLinkedList() {
         clear();
     }
 
     public void clear() {
         beginMarker = new Node<AnyType>(null, null, null);
         endMarker = new Node<AnyType>(null, beginMarker, null);
-        //endMarker后于beginMarker定义，初始化时指向beginMarker,beginMarker无法在初始化时指向endMarker
         beginMarker.next = endMarker;
 
         theSize = 0;
@@ -38,53 +38,13 @@ public class MyLinkedList<AnyType> implements Iterable<AnyType> {
         return theSize;
     }
 
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    //加到末尾
-    public boolean add(AnyType x) {
+    public Boolean add(AnyType x) {
         add(size(), x);
         return true;
     }
 
     public void add(int idx, AnyType x) {
         addBefore(getNode(idx), x);
-    }
-
-    public AnyType get(int idx) {
-        return getNode(idx).data;
-    }
-
-    public AnyType set(int idx, AnyType newVal) {
-        //一个引用，改变节点值
-        Node<AnyType> p = getNode(idx);
-        AnyType oldVal = p.data;
-        p.data = newVal;
-        return oldVal;
-    }
-
-    public AnyType remove(int idx) {
-        return remove(getNode(idx));
-    }
-
-    private void addBefore(Node<AnyType> p, AnyType x) {
-        Node<AnyType> newNode = new Node<AnyType>(x, p.prev, p);//双链表，新增节点插入指向前后
-        //前后两个节点的指向变化
-        newNode.prev.next = newNode;
-        p.prev = newNode;
-        theSize++;
-        //修改次数+1
-        modCount++;
-    }
-
-    private AnyType remove(Node<AnyType> p) {
-        p.next.prev = p.prev;
-        p.prev.next = p.next;
-        theSize--;
-        //修改次数仍+1
-        modCount++;
-        return p.data;
     }
 
     //搜索节点，先判断节点在前半段还是后半段，略提高效率，双链表可以从两个方向查找
@@ -105,9 +65,45 @@ public class MyLinkedList<AnyType> implements Iterable<AnyType> {
         return p;
     }
 
+    private void addBefore(Node<AnyType> p, AnyType x) {
+        Node<AnyType> newNode = new Node<AnyType>(x, p.prev, p);//双链表，新增节点插入指向前后
+        //前后两个节点的指向变化
+        newNode.prev.next = newNode;
+        p.prev = newNode;
+        theSize++;
+        //修改次数+1
+        modCount++;
+    }
+
+    public AnyType get(int idx) {
+        return getNode(idx).data;
+    }
+
+    public AnyType set(int idx, AnyType newVal) {
+        //一个引用，改变节点值
+        Node<AnyType> p = getNode(idx);
+        AnyType oldVal = p.data;
+        p.data = newVal;
+        return oldVal;
+    }
+
+    public AnyType remove(int idx) {
+        return remove(getNode(idx));
+    }
+
+    private AnyType remove(Node<AnyType> p) {
+        p.next.prev = p.prev;
+        p.prev.next = p.next;
+        theSize--;
+        //修改次数仍+1
+        modCount++;
+        return p.data;
+    }
+
+
     public java.util.Iterator<AnyType> iterator() {
         //返回一个实例化的内部类，该类是迭代器，内部实现
-        return new LinkedListIterator();
+        return new MyTwoLinkedList.LinkedListIterator();
     }
 
     //实现Iterator接口
@@ -148,14 +144,11 @@ public class MyLinkedList<AnyType> implements Iterable<AnyType> {
                 throw new IllegalStateException();
             //调用外部类方法
             //next()使current先指向下一元素，这里移除current前一个元素，这样边迭代边移除，先后移后删除前一个元素
-            MyLinkedList.this.remove(current.prev);
+
+
+            MyTwoLinkedList.this.remove(current.prev);
             okToRemove = false;
             expectedModCount++;
         }
     }
-
-    private int theSize;
-    private int modCount = 0;
-    private Node<AnyType> beginMarker;
-    private Node<AnyType> endMarker;
 }

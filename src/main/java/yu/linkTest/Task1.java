@@ -1,4 +1,4 @@
-package yu;
+package yu.linkTest;
 
 import java.io.File;
 import java.io.FileInputStream;

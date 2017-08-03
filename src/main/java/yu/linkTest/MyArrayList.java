@@ -1,4 +1,4 @@
-package yu;
+package yu.linkTest;
 
 /**
  * Created by koreyoshi on 2017/7/31.
@@ -10,6 +10,7 @@ public class MyArrayList<AnyType> implements Iterable<AnyType> {
 
     private int theSize;
     private AnyType[] theItems;
+
 
     public MyArrayList(){
         clear();

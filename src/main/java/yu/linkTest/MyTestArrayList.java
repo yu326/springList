@@ -1,4 +1,4 @@
-package yu;
+package yu.linkTest;
 
 /**
  * Created by koreyoshi on 2017/7/31.
