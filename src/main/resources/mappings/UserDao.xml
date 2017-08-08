@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~
+  ~ Copyright (c) 2017, inter3i.com. All rights reserved.
+  ~ All rights reserved.
+  ~
+  ~ Author: Administrator
+  ~ Created: 2017/04/12
+  ~ Description:
+  ~
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yu.dao.UserDao">
+
+    <!-- 查询用户的area_code  1 -->
+    <select id="query"   resultType="java.util.Map" >
+		select title,'desc'  from love
+		<!--SELECT area_code FROM dict_area  WHERE-->
+		<!--<if test="cond1 != null and cond1 != ''">-->
+			<!--cond1 = #{cond1}-->
+		<!--</if>-->
+		<!--<if test="cond2 !=null  and cond2 != ''">-->
+			<!--and cond2 = #{cond2}-->
+		<!--</if>-->
+		<!--<if test="cond3 !=null  and cond3 != ''">-->
+			<!--and cond3 = #{cond3}-->
+		<!--</if>-->
+		<!--<if test="cond4 !=null  and cond4 != ''">-->
+			<!--and cond4 = #{cond4}-->
+		<!--</if>-->
+		<!--<if test="sourceid !=null ">-->
+			<!--and 3rd_part = #{sourceid}  limit 1-->
+		<!--</if>-->
+	</select>
+
+
+<!-- 查询用户的area_code  2 -->
+	<select id="getUserDirectCode" resultType="Map">
+            select a.country,a.province,a.city,a.district from area a where a.area_code = #{area_code} order by a.area_code limit 1
+	</select>
+
+	<select id="getSourceId" parameterType="java.util.Map"   resultType="java.util.Map">
+		SELECT sourceid FROM sourceurl  WHERE sourceurl.source = #{source}
+	</select>
+
+
+
+
+
+</mapper>

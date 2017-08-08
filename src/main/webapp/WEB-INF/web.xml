@@ -11,6 +11,7 @@
         <param-value>classpath:/applicationContext.xml</param-value>
         <!-- 默认是/WEB-INF/applicationContext.xml -->
     </context-param>
+
     <listener>
         <listener-class>
             org.springframework.web.context.ContextLoaderListener

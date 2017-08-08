@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import yu.service.IUserService;
 import yu.test.Yu;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by koreyoshi on 2017/7/25.
@@ -34,16 +36,28 @@ public class TestController {
     @Autowired
     private Yu yu;
 
+
+    @Autowired
+    private IUserService iUserService;
+
+
     @RequestMapping("index")
     @ResponseBody
     public  String index() throws IOException {
+
+
+
+        geta();
+
+
+
 //        测试注入
 //        String s = outer.getSolrNameBy("test");
 //        System.out.println(s);
-        String s = yu.getSolrName("cache01");
-        String selectUrl = yu.geneSolrSelect("cache01");
-        System.out.println(s);
-        System.out.println(selectUrl);
+//        String s = yu.getSolrName("cache01");
+//        String selectUrl = yu.geneSolrSelect("cache01");
+//        System.out.println(s);
+//        System.out.println(selectUrl);
 
 //        String title = titleService.setTitle();
 //        System.out.println(title);
@@ -78,5 +92,9 @@ public class TestController {
 //        logger.error("the error message");
         //返回一个index.jsp这个视图
         return "index";
+    }
+    public void geta(){
+        List a = iUserService.query();
+        System.out.println(a);
     }
 }
