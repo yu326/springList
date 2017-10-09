@@ -165,6 +165,7 @@ public class ClassAnalyzer {
 //            in.close();
 //            String className = "test.util.Pair1";
             String className = "test.Service.DateInterval";
+//            String className = "test.polymorphic.JNC";
             analyzer(className);
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();

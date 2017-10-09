@@ -1,7 +1,5 @@
 package test;
 
-import test.Service.Animal;
-
 /**
  * Created by koreyoshi on 2017/8/9.
  */
@@ -9,7 +7,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        System.out.println(Animal.getName());
+//        System.out.println(Animal.getName());
 
 //        Pair<Boolean> pair = new Pair<Boolean>();
 //        pair.setFirst(false);
@@ -46,6 +44,34 @@ public class Test {
 
 //        System.out.println("the height is:" + animal.getHeight());
 //        System.out.println("the food is:" + animal.getFood());
+//        int  i=0 ;
+//        for (;;){
+//            i++;
+//            System.out.println(i);
+//            if(i>200){
+//                break;
+//            }
+//        }
+//        String s = new String("123");
+//        System.out.println(s.hashCode());
+
+        //   -----------------        StringBuffer   start    ---------------------
+
+//        StringBuffer s1 = new StringBuffer("123");
+//        System.out.println(s1);
+//        s1.append(123);
+//        System.out.println(s1);
+
+        //   -----------------        StringBuilder   start    ---------------------
+//        StringBuilder s2 = new StringBuilder("222");
+//        System.out.println(s2);
+//        s2.append(333);
+//        System.out.println(s2);
+//        s2.reverse();
+//        StringBuilder s2 = new StringBuilder("123456789");
+//        s2.reverse();
+
+
 
     }
 

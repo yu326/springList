@@ -14,10 +14,10 @@ public class java {
 //$imgpattern = "/<IMG[^>]+src=\"([^\"]+)/";
 //$imgpattern = "/<IMG[^>]+src=\"([^\"]+)/"; 当src前有>时将不再适用, 例如前面有js,onmouseover=\"if(this.width>760)....
 
-        $item_text = "<img src='a.jpg'/> aaaaa  <img src=\"b.jpg\"/>";
-        $imgpattern = "/<[img|IMG].*?src=[\"|\'](.*?(?:[\.gif|\.jpg|\.jpeg|\.bmp|\.png|\.pic]?))[\'|\"].*?[\/]?>/";
-        preg_match_all($imgpattern, $item_text, $matches2);
-//print_r($matches2);
+//        $item_text = "<img src='a.jpg'/> aaaaa  <img src=\"b.jpg\"/>";
+//        $imgpattern = "/<[img|IMG].*?src=[\"|\'](.*?(?:[\.gif|\.jpg|\.jpeg|\.bmp|\.png|\.pic]?))[\'|\"].*?[\/]?>/";
+//        preg_match_all($imgpattern, $item_text, $matches2);
+////print_r($matches2);
 
 
 //把br，p标签替换成\r\n
@@ -29,7 +29,7 @@ public class java {
 //
 //print_r($text);
 
-        $text = strip_tags($text);
+//        $text = strip_tags($text);
     }
 
 }

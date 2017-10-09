@@ -4,15 +4,15 @@ package yu.linkTest;
  * Created by koreyoshi on 2017/7/28.
  */
 public class MyTwoLinkedList<AnyType> implements Iterable<AnyType> {
-    private int theSize;
-    private int modCount = 0;
-    private Node<AnyType> beginMarker;
-    private Node<AnyType> endMarker;
+    private int theSize;                //链表size
+    private int modCount = 0;           //操作数
+    private Node<AnyType> beginMarker;  //头结点
+    private Node<AnyType> endMarker;    //尾节点
 
-    private static class Node<AnyType> {
-        public AnyType data;
-        public Node<AnyType> prev;
-        public Node<AnyType> next;
+    private static class Node<AnyType> {  //链表节点的结构
+        public AnyType data;                //数据
+        public Node<AnyType> prev;          //上一个节点
+        public Node<AnyType> next;          //下一个节点
 
         public Node(AnyType d, Node<AnyType> p, Node<AnyType> n) {
             data = d;
@@ -21,9 +21,11 @@ public class MyTwoLinkedList<AnyType> implements Iterable<AnyType> {
         }
     }
 
-    public MyTwoLinkedList() {
+    public MyTwoLinkedList() {   //构造方法，初始化。
         clear();
     }
+
+
 
     public void clear() {
         beginMarker = new Node<AnyType>(null, null, null);
@@ -150,5 +152,10 @@ public class MyTwoLinkedList<AnyType> implements Iterable<AnyType> {
             okToRemove = false;
             expectedModCount++;
         }
+    }
+
+
+    public static void main(String[] args) {
+
     }
 }
