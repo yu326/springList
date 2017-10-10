@@ -3,6 +3,7 @@ package test.TestHashMap;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.*;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * Created by koreyoshi on 2017/9/15.
@@ -44,10 +45,13 @@ public class Test {
         list.add("yu1");
         list.add("yu2");
 
+
         Iterator it = list.iterator();
         while(it.hasNext()) {
                  Object obj = it.next();
                  System.out.println(obj);
         }
+
+
     }
 }

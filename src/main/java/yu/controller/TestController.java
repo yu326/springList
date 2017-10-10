@@ -52,7 +52,7 @@ public class TestController {
 
 
 //        测试注入
-//        String s = outer.getSolrNameBy("test");
+//        String s = outer.getSolrNameBy("Test");
 //        System.out.println(s);
 //        String s = yu.getSolrName("cache01");
 //        String selectUrl = yu.geneSolrSelect("cache01");
