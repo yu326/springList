@@ -1,0 +1,69 @@
+Index: src/main/java/yu/TestController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/yu/TestController.java	(revision f3d63f7e537741e1561e7505562d2cda28b91d17)
++++ src/main/java/yu/TestController.java	(revision )
+@@ -3,6 +3,8 @@
+ 
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
++import org.springframework.core.io.ClassPathResource;
++import org.springframework.core.io.Resource;
+ import org.springframework.stereotype.Controller;
+ import org.springframework.web.bind.annotation.RequestMapping;
+ 
+@@ -19,8 +21,12 @@
+     @RequestMapping("index")
+ //    @ResponseBody
+     public  String index(){
++
++        Resource resource = new ClassPathResource("appconfig.properties");
++
++
+         //输出日志文件
+-//        logger.info("the first jsp pages");
++        logger.info("the first jsp pages");
+         logger.debug("the debug message");
+         logger.error("the error message");
+         //返回一个index.jsp这个视图
+Index: src/main/resources/appconfig.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+--- src/main/resources/appconfig.properties	(revision )
++++ src/main/resources/appconfig.properties	(revision )
+@@ -0,0 +1,31 @@
++# Copyright (c) 2017, inter3i.com. All rights reserved.
++# All rights reserved.
++# Author: wangchaochao
++# Created: 2017/04/10
++# Description:
++#
++#
++ds.solr.host[solr01]=192.168.0.151
++ds.solr.host[solr02]=10.24.233.56
++ds.solr.host[solr03]=10.25.86.219
++ds.solr.host[solr04]=10.26.90.13
++#
++ds.solr.port[solr01]=8080
++ds.solr.port[solr02]=8080
++ds.solr.port[solr03]=8080
++ds.solr.port[solr04]=8080
++#
++ds.solr.flush.path=/solrstore/update/?type=no_data_commite&commit=true
++ds.solr.insert.path=/solrstore/update/?type=insert
++ds.solr.update.path=/solrstore/update/?type=update
++ds.solr.delete.path=/solrstore/update/?type=delete
++ds.solr.updateSmart.path=/solrstore/update/?type=smartupdate
++ds.solr.query.path=/solrstore/select
++#ds.solr.insert.path=/solrstore/update/?type=insert&commit=true
++#ds.solr.update.path=/solrstore/update/?type=update&commit=true
++#ds.solr.delete.path=/solrstore/update/?type=delete&commit=true
++#
++ds.cacheSolrMap[cache01]=solr01
++ds.cacheSolrMap[cache02]=solr02
++ds.cacheSolrMap[cache03]=solr03
++ds.cacheSolrMap[cache04]=solr04

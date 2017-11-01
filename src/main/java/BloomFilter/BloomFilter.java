@@ -91,14 +91,15 @@ public class BloomFilter {
             for (int i = 0; i < len; i++) {
                 result = seed * result + value.charAt(i);
             }
-
             return (size - 1) & result;
         }
+
     }
 
     @Test
     public void test() {
         try {
+            jedis = new Jedis("127.0.0.1", 6379);
             String s = "www.baidu.com";
             String s1 = "yu";
             String s2 = "呵呵哒";
