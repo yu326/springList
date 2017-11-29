@@ -163,9 +163,9 @@ public class ClassAnalyzer {
 //            System.out.print("Input class name:");
 //            String className = in.next();
 //            in.close();
-//            String className = "test.util.Pair1";
-            String className = "test.Service.DateInterval";
-//            String className = "test.polymorphic.JNC";
+//            String className = "test12.util.Pair1";
+            String className = "test12.Service.DateInterval";
+//            String className = "test12.polymorphic.JNC";
             analyzer(className);
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();

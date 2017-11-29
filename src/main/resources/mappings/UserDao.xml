@@ -17,19 +17,19 @@
     <select id="query"   resultType="java.util.Map" >
 		select title,'desc'  from love
 		<!--SELECT area_code FROM dict_area  WHERE-->
-		<!--<if test="cond1 != null and cond1 != ''">-->
+		<!--<if test12="cond1 != null and cond1 != ''">-->
 			<!--cond1 = #{cond1}-->
 		<!--</if>-->
-		<!--<if test="cond2 !=null  and cond2 != ''">-->
+		<!--<if test12="cond2 !=null  and cond2 != ''">-->
 			<!--and cond2 = #{cond2}-->
 		<!--</if>-->
-		<!--<if test="cond3 !=null  and cond3 != ''">-->
+		<!--<if test12="cond3 !=null  and cond3 != ''">-->
 			<!--and cond3 = #{cond3}-->
 		<!--</if>-->
-		<!--<if test="cond4 !=null  and cond4 != ''">-->
+		<!--<if test12="cond4 !=null  and cond4 != ''">-->
 			<!--and cond4 = #{cond4}-->
 		<!--</if>-->
-		<!--<if test="sourceid !=null ">-->
+		<!--<if test12="sourceid !=null ">-->
 			<!--and 3rd_part = #{sourceid}  limit 1-->
 		<!--</if>-->
 	</select>

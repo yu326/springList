@@ -6,11 +6,11 @@ package test;
 public class test1 extends Base{
 
     static{
-        System.out.println("test static");
+        System.out.println("test12 static");
     }
 
     public test1(){
-        System.out.println("test constructor");
+        System.out.println("test12 constructor");
     }
 
     public static void main(String[] args) {

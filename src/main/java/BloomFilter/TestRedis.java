@@ -24,7 +24,7 @@ public class TestRedis {
         //连接redis服务器，192.168.0.100:6379
         jedis = new Jedis("127.0.0.1", 6379);
         //权限认证
-//        jedis.auth("");
+        jedis.auth("yu12346");
     }
 
     /**
@@ -140,7 +140,8 @@ public class TestRedis {
         int idx = 858;
         String  key = "hehe";
         boolean value = true;
-        jedis.setbit(key,idx,value);
+        boolean res = jedis.setbit(key,idx,value);
+
         System.out.println(jedis.getbit(key,idx));
         System.out.println(jedis.getbit(key,idx-1));
     }

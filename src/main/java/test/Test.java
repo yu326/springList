@@ -71,7 +71,22 @@ public class Test {
 //        StringBuilder s2 = new StringBuilder("123456789");
 //        s2.reverse();
 
+        String screen = "{" +
+                "    \"$and\":[" +
+                "        {" +
+                "            \"brand_machine\":{" +
+                "                \"$exists\":false" +
+                "            }" +
+                "        }," +
+                "        {" +
+                "                    \"text\":{" +
+                "                        \"$ne\":null" +
+                "                    }" +
+                "        }" +
+                "    ]" +
+                "}";
 
+        System.out.println(screen);
 
     }
 
