@@ -19,7 +19,7 @@ public class DateInterval extends Pair<Date> {
         return super.getSecond();
     }
 
-//    public void setSecond(Object obj){
+//    public void setSecond(TestQuote obj){
 //        System.out.println("覆写超类方法！");
 //    }
     public static void main(String[] args) {

@@ -16,7 +16,7 @@ public class ArrayAlg {
         return t[t.length/2];
     }
 
-    //  public static Object getMiddle(Object[] o){
+    //  public static TestQuote getMiddle(TestQuote[] o){
 //      return o[o.length/2];
 //  }
     public static void main(String[] args) {

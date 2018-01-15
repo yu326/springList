@@ -37,7 +37,7 @@ public class CourseController {
 //    //本方法将处理 /courses/view2/123 形式的URL
 //    @RequestMapping("/view2/{courseId}")
 //    public String viewCourse2(@PathVariable("courseId") Integer courseId,
-//                              Map<String, Object> model) {
+//                              Map<String, TestQuote> model) {
 //
 //        log.debug("In viewCourse2, courseId = {}", courseId);
 //        Course course = courseService.getCourseById(courseId);

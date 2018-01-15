@@ -19,7 +19,7 @@ public class Test {
 //        System.out.println(map);
 //
 //
-//        HashSet<Object> set = new HashSet<Object>();
+//        HashSet<TestQuote> set = new HashSet<TestQuote>();
 //        set.add("123");
 //        System.out.println(set);
 

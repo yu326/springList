@@ -28,14 +28,14 @@ public class Test {
 //        queue.offer("d");
 //        queue.offer("e");
 //
-//        Object resValue = queue.poll();
+//        TestQuote resValue = queue.poll();
 //        System.out.println("the resValue is:" + resValue);
 //
 //
 //        Iterator<String> iterable = queue.iterator();
 //
 //        while (iterable.hasNext()) {
-//            Object value = iterable.next();
+//            TestQuote value = iterable.next();
 //            System.out.println("the value is:" + value);
 //        }
         //    用循环数组实现的queue
@@ -51,7 +51,7 @@ public class Test {
 //        Iterator<String> iterable = q.iterator();
 //
 //        while (iterable.hasNext()) {
-//            Object value = iterable.next();
+//            TestQuote value = iterable.next();
 //            System.out.println("the value is:" + value);
 //        }
 
