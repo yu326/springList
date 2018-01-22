@@ -42,7 +42,6 @@ public class BloomFilter {
                 jedis.setbit(REDIS_CACHE_KEY, f.hash(value), true);
 //                bits.set(f.hash(value), true);
             }
-
         }
     }
 
